@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../Container'
 import SessionHeader from "@/components/session/SessionHeader";
 import SessionBody from "@/components/session/SessionBody";
+import SessionAnswer from "@/components/session/SessionAnswer";
 
 
 export default function QuizSession() {
@@ -13,12 +14,7 @@ export default function QuizSession() {
                 <Container>
                     <div className={'grid grid-cols-8'}>
                         <SessionBody/>
-                        <div className={'p-2 col-span-3'}>
-                            <div
-                                className={'p-2 flex flex-col gap-3 bg-card rounded-xl h-[calc(100vh-4rem-1rem)] max-h-[calc(100vh-4rem-1rem)] border'}>
-
-                            </div>
-                        </div>
+                        <SessionAnswer />
                     </div>
                 </Container>
             </div>

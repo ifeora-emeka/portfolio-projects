@@ -16,8 +16,9 @@ export default function SessionHeader(){
                             className='h-9 w-9 rounded-full object-center'/>
                         <div className='flex flex-col'>
                             <h1 className='font-bold'>Javascript Quiz Session</h1>
-                            <p className='text-muted-foreground text-xs'>Introduction
-                                to Javascript Quiz Session</p>
+                            <p className='text-muted-foreground text-xs'>
+                                Introduction to Javascript Quiz Session
+                            </p>
                         </div>
                     </div>
                     <div className={'flex gap-4 items-center'}>
@@ -25,7 +26,7 @@ export default function SessionHeader(){
                             <Button size={'icon'} variant={'outline'} className={'rounded-tr-none rounded-br-none'}>
                                 <ArrowLeft />
                             </Button>
-                            <Button size={'icon'} variant={'outline'} className={'rounded-tl-none rounded-bl-none border-l-0'}>
+                            <Button size={'icon'} variant={'outline'} className={'rounded-tl-none rounded-bl-none border-l-0'} disabled>
                                 <ArrowRight />
                             </Button>
                         </div>

@@ -5,6 +5,10 @@ export interface QuizSession {
     description: string;
     userID: string;
     settings: QuizSessionSettings;
+    totalQuestions: number;
+    totalSections: number;
+    totalDuration: number;
+    totalAnswered: number;
 }
 
 export interface QuizSessionSettings {
@@ -46,10 +50,9 @@ export interface Option {
 }
 
 export interface QuizSessionResult {
-    id: string;
     quizSessionID: string;
     userID: string;
-    score: number; // the score shoulbe over 100
+    score: number; // Ex if we have 10 questions and user got 7 correct, score will be 70
     date: Date;
 }
 
