@@ -9,7 +9,7 @@ export interface QuizSession {
 
 export interface QuizSessionSettings {
     quizSessionID: string;
-    timeLimit: number;
+    timeLimitInMinutes: number;
     isRandomized: boolean;
     isTimed: boolean;
     isPracticeMode: boolean;
