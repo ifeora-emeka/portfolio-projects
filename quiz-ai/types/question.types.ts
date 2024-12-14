@@ -45,8 +45,17 @@ export interface Option {
     option: string;
 }
 
+export interface QuizSessionResult {
+    id: string;
+    quizSessionID: string;
+    userID: string;
+    score: number; // the score shoulbe over 100
+    date: Date;
+}
+
 export interface QuizSessionData {
     quizSession: QuizSession;
     quizSections: QuizSection[];
     questions: Question[];
+    quizSessionResults: QuizSessionResult[];
 }
