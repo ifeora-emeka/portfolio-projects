@@ -24,13 +24,13 @@ export default function SessionOptions() {
 const EachOption = ({heading, subHeading, index, mode = 'default', isSelected}: { heading: string; subHeading: string; index: number; mode?: 'default' | 'wrong' | 'correct'; isSelected?:boolean; }) => {
     return <>
         <button className={cn('flex gap-3 border-2 rounded-xl px-4 py-2', {
-            "border-green-400 bg-green-50": mode === 'correct',
-            "border-red-400 bg-red-50": mode === 'wrong',
+            "border-green-400 bg-green-50 text-green-700": mode === 'correct',
+            "border-red-400 bg-red-50 text-red-700": mode === 'wrong',
             "hover:border-primary": mode === 'default' && !isSelected,
             "border-primary": mode === 'default' && isSelected
         })}>
             <div>
-                <strong className={'font-semibold text-4xl'}>{index + 1}</strong>
+                <p className={'font-semibold text-4xl'}>{index + 1}</p>
             </div>
             <div className={'flex-1 flex-col flex'}>
                 <div>

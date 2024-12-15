@@ -5,10 +5,34 @@ export interface QuizSession {
     description: string;
     userID: string;
     settings: QuizSessionSettings;
+
+    // AI gen
+    areasOfImprovement: string[];
+
+    // settings
+    totalDurationInMinutes: number;
+    totalAnsweredCorrectly: number;
+    canViewPreviousQuestions: boolean;
+
+    // user gen
+    userProvidedTopic: string;
+    timeSpentInSeconds: number;
+
+    // progress
+    currentSectionIndex: number;
+    currentQuestionIndex: number;
+    progressPercentage: number;
+
+    // results
     totalQuestions: number;
     totalSections: number;
-    totalDuration: number;
-    totalAnswered: number;
+    analytics: {
+        weakAreas: string[];
+        strongAreas: string[];
+        averageAnswerTime: number;
+    };
+    isCompleted: boolean;
+    lastAccessed: Date;
 }
 
 export interface QuizSessionSettings {
@@ -25,6 +49,11 @@ export interface QuizSection {
     quizSessionID: string;
     description: string;
     whatWeWillCover: string[];
+    explanation: string;
+    hint: string;
+    timeLimitInSeconds?: number;
+    timeSpentInSeconds: number;
+
 }
 
 export interface Question {
@@ -34,7 +63,20 @@ export interface Question {
     question: string;
     type: QuestionType;
     options: Option[];
-    correctAnswers: string[]; // IDs of the correct options
+    correctAnswers: string[];
+    userAnswer: UserAnswer;
+    timeLimitInSeconds?: number;
+    timeSpentInSeconds: number;
+    difficulty: 'easy' | 'medium' | 'hard';
+    tags: string[];
+}
+
+export interface UserAnswer {
+    questionID: string;
+    selectedOptionIDs: string[];
+    typedAnswer?: string;
+    isCorrect: boolean | null;
+    timestamp: Date;
 }
 
 export enum QuestionType {
@@ -46,14 +88,21 @@ export enum QuestionType {
 export interface Option {
     id: string;
     questionID: string;
-    option: string;
+    content: string;
 }
 
 export interface QuizSessionResult {
     quizSessionID: string;
     userID: string;
-    score: number; // Ex if we have 10 questions and user got 7 correct, score will be 70
+    score: number;
     date: Date;
+    detailedScores: {
+        sectionID: string;
+        correctAnswers: number;
+        totalQuestions: number;
+        percentage: number;
+    }[];
+    partialCreditEnabled: boolean;
 }
 
 export interface QuizSessionData {
