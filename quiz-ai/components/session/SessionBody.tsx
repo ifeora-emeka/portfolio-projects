@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SessionBody() {
     return <>
-        <div className={'col-span-5 h-[calc(100vh-4rem)] p-2 relative'}>
+        <>
             <ScrollArea
                 className={'bg-card rounded-xl h-[calc(100vh-4rem-1rem)] border relative'}>
                 <div
@@ -22,6 +22,6 @@ export default function SessionBody() {
                     }
                 </div>
             </ScrollArea>
-        </div>
+        </>
     </>
 }
