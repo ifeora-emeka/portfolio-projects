@@ -1,4 +1,4 @@
-import QuizSession from '@/components/session/QuizSession'
+import QuizSession from '@/components/trackDetails/QuizSession'
 import React from 'react'
 
 export default function page() {

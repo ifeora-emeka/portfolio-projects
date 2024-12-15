@@ -1,5 +1,5 @@
 import React from "react";
-import SessionOptions from "@/components/session/SessionOptions";
+import SessionOptions from "@/components/trackDetails/SessionOptions";
 
 export default function SessionAnswer() {
     return <>

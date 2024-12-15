@@ -1,8 +1,9 @@
 import React from 'react'
 import Container from '../Container'
-import SessionHeader from "@/components/session/SessionHeader";
-import SessionBody from "@/components/session/SessionBody";
-import SessionAnswer from "@/components/session/SessionAnswer";
+import SessionHeader from "@/components/trackDetails/SessionHeader";
+import SessionBody from "@/components/trackDetails/SessionBody";
+import SessionAnswer from "@/components/trackDetails/SessionAnswer";
+import TrackCurriculumList from './TrackCurriculumList';
 
 
 export default function QuizSession() {
@@ -13,9 +14,7 @@ export default function QuizSession() {
             <div className='flex-1 h-[calc(100vh-4rem)]'>
                 <Container>
                     <div className={'grid grid-cols-11'}>
-                        <div className={'col-span-2 h-[calc(100vh-4rem)] p-2 relative'}>
-                            <div className='bg-card border p-2 rounded-xl h-[calc(100vh-4rem-1rem)] '></div>
-                        </div>
+                        <TrackCurriculumList />
                         <div className={'col-span-6 h-[calc(100vh-4rem)] p-2 relative'}>
                             <SessionBody />
                         </div>
