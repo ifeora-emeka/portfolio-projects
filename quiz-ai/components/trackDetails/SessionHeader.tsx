@@ -1,23 +1,24 @@
 import Container from "@/components/Container";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
-import {Button} from "@/components/ui/button";
-import {ArrowLeft, ArrowRight} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 
-export default function SessionHeader(){
+export default function SessionHeader() {
     return <>
         <header className='bg-card border-b min-h-16 max-h-16 flex items-center'>
             <Container>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-2'>
-                        <img
-                            src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png'
-                            alt='session logo'
-                            className='h-9 w-9 rounded-full object-center'/>
+                        <div
+                            className='h-9 w-9 rounded-full object-center bg-primary text-primary-foreground flex items-center justify-center'
+                        >
+                            <Sparkles className="h-5 w-5" />
+                        </div>
                         <div className='flex flex-col'>
-                            <h1 className='font-bold'>Javascript Quiz Session</h1>
+                            <h1 className='font-bold'>Lurna AI</h1>
                             <p className='text-muted-foreground text-xs'>
-                                Introduction to Javascript Quiz Session
+                                AI powered learning
                             </p>
                         </div>
                     </div>
@@ -31,12 +32,12 @@ export default function SessionHeader(){
                             </Button>
                         </div>
                         <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png"/>
+                            <AvatarImage src="https://github.com/shadcn.png" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </div>
                 </div>
             </Container>
-        </header>
+        </header >
     </>
 }

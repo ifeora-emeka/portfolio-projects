@@ -1,10 +1,9 @@
 import {User} from "@/types/auth.types";
-import {LearningTrack} from "@/types/track.types";
 
 export interface Curriculum {
     id: string;
-    track: LearningTrack;
-    user: User;
+    trackID: string;
+    userID: string;
     shortSummary: string;
     objectives: string[];
     prerequisites: string[];
@@ -25,7 +24,7 @@ export interface Module {
     title: string;
     slug: string;
     shortDescription: string;
-    curriculum: Curriculum;
+    curriculumID: string;
 }
 
 export interface Unit {
@@ -33,7 +32,8 @@ export interface Unit {
     title: string;
     slug: string;
     shortDescription: string;
-    modules: Module;
+    moduleID: string;
+    curriculumID: string;
     type: UnitType;
 }
 
@@ -42,5 +42,5 @@ export type UnitType = 'lecture' | 'interactive_session' | 'quiz' | 'resources' 
 export interface CurriculumAPIResponse {
     curriculum: Curriculum;
     modules: Module[];
-    lessons: Unit[];
+    units: Unit[];
 }

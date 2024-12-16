@@ -8,6 +8,8 @@ export interface LearningTrack {
     isDeleted: boolean;
     isCompleted: boolean;
     lastEdited: Date;
+    difficultyLevel: 'beginner' | 'intermidiate' | 'advanced' | 'expert';
     createdAt: Date;
     updatedAt: Date;
+    userID: string;
 }
