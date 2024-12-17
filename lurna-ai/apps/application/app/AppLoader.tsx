@@ -3,7 +3,7 @@ import { APP_CONFIG } from '@/config/app.config'
 import { Sparkles } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
-export default function AppLoader({ children }: { children: any }) {
+export default function AppLoader({ children }: { children: React.ReactNode }) {
     const [ready, setReady] = useState(false);
 
     useEffect(() => {

@@ -8,7 +8,7 @@ type Props = {
     Icon: LucideIcon;
     children: React.ReactNode;
     progress?: number;
-    rightComponent?: any;
+    rightComponent?: React.ReactNode;
 }
 
 export default function SectionCard({
@@ -30,7 +30,6 @@ export default function SectionCard({
                         </div>
                     }
                     <div className='flex items-center gap-2'>
-                        {/* @ts-ignore */}
                         <Icon className='h-6 w-6 object-center' />
                         <div className='flex flex-col'>
                             <h1 className='font-bold text-xs'>{heading}</h1>
@@ -43,7 +42,6 @@ export default function SectionCard({
                         {rightComponent}
                     </div>
                 </header>
-                {/* @ts-ignore */}
                 <ScrollArea
                     className={'h-[calc(100vh-3.5rem-1rem-3rem)] relative'}
                 >
