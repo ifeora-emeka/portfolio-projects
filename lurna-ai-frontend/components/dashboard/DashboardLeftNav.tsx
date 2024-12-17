@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 import SectionCard from '../session/SectionCard'
-import { MenuIcon } from 'lucide-react'
+import { DollarSign, GraduationCap, Wallet } from 'lucide-react'
+import EachNavLink from '../EachNavLink'
 
 export default function DashboardLeftNav() {
   return (
@@ -10,8 +11,10 @@ export default function DashboardLeftNav() {
             heading='Menu'
             verient='ghost'
         >
-            <div>
-
+            <div className='py-3'>
+              <EachNavLink label='Learning tracks' route='/' Icon={GraduationCap} isActive />
+              <EachNavLink label='Wallet' route='/wallet' Icon={Wallet} />
+              <EachNavLink label='Usage and billing' route='/billing' Icon={DollarSign} />
             </div>
         </SectionCard>
 

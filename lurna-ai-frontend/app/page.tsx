@@ -14,16 +14,14 @@ export default function page() {
         <div className='flex-1 py-2'>
           <Container>
             <div className={'flex gap-2'}>
-              <div className='xl:w-[20%]'>
+              <div className='lg:w-[17%]'>
                 <DashboardLeftNav />
               </div>
               <div className={'flex-1'}>
                 <DashboardBody />
               </div>
-              <div className={'xl:w-[25%]'}>
-                <div className='p-3 rounded-xl'>
-                  <HallOfFameList />
-                </div>
+              <div className={'lg:w-[25%]'}>
+                <HallOfFameList />
               </div>
             </div>
           </Container>
