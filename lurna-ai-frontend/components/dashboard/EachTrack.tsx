@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-export default function EachTrack({ }: Props) {
+export default function EachTrack() {
     return (
         <>
             <div className='bg-card rounded-xl border overflow-hidden hover:shadow-sm hover:border-primary relative group'>
