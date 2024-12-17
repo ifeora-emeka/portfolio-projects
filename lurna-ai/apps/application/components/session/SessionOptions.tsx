@@ -4,7 +4,6 @@ import {Button} from "@/components/ui/button";
 export default function SessionOptions() {
     return <>
         <div className={'flex flex-col gap-2'}>
-            <h6 className={'text-xl pb-1 font-bold'}>Your answer is?</h6>
             <div className={'flex flex-col gap-2'}>
                 <EachOption heading={'Option 1'} subHeading={'This is the correct answer'} index={0}/>
                 <EachOption heading={'Option 2'} subHeading={'This is the correct answer'} index={1} mode={'correct'}/>
