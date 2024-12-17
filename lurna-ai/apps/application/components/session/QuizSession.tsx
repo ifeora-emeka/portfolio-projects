@@ -9,12 +9,19 @@ export default function QuizSession() {
     return (
         <div
             className='min-h-screen bg-background max-h-screen flex flex-col select-none'>
-            <SessionHeader/>
+            <SessionHeader />
             <div className='flex-1 h-[calc(100vh-4rem)]'>
                 <Container>
-                    <div className={'grid grid-cols-8'}>
-                        <SessionBody/>
-                        <SessionAnswer />
+                    <div className={'grid grid-cols-12'}>
+                        <div className='pr-2 pb-2 pt-2 col-span-3'>
+
+                        </div>
+                        <div className={'col-span-6 h-[calc(100vh-4rem)] p-2 relative'}>
+                            <SessionBody />
+                        </div>
+                        <div className={'pr-2 pb-2 pt-2 col-span-3'}>
+                            <SessionAnswer />
+                        </div>
                     </div>
                 </Container>
             </div>

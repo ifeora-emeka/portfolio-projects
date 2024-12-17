@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import React from "react";
 import {Button} from "@/components/ui/button";
-import {ArrowLeft, ArrowRight} from "lucide-react";
+import {ArrowLeft, ArrowRight, Sparkles} from "lucide-react";
 
 export default function SessionHeader(){
     return <>
@@ -10,14 +10,14 @@ export default function SessionHeader(){
             <Container>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-2'>
-                        <img
-                            src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png'
-                            alt='session logo'
-                            className='h-9 w-9 rounded-full object-center'/>
+                        <div
+                            className='h-9 w-9 rounded-full object-center bg-primary flex items-center justify-center text-primary-foreground'>
+                                <Sparkles />
+                            </div>
                         <div className='flex flex-col'>
-                            <h1 className='font-bold'>Javascript Quiz Session</h1>
+                            <h1 className='font-bold'>Lurna AI</h1>
                             <p className='text-muted-foreground text-xs'>
-                                Introduction to Javascript Quiz Session
+                                AI driven learning experience
                             </p>
                         </div>
                     </div>
