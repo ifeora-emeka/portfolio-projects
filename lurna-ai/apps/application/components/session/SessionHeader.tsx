@@ -1,19 +1,19 @@
 import Container from "@/components/Container";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
-import {Button} from "@/components/ui/button";
-import {ArrowLeft, ArrowRight, Sparkles} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 
-export default function SessionHeader(){
+export default function SessionHeader() {
     return <>
-        <header className='bg-card border-b min-h-14 max-h-14 flex items-center'>
-            <Container>
+        <Container>
+            <header className='bg-card border min-h-14 max-h-14 flex items-center px-3 rounded-xl'>
                 <div className='flex items-center justify-between w-full'>
                     <div className='flex items-center gap-2'>
                         <div
                             className='h-9 w-9 rounded-full object-center bg-primary flex items-center justify-center text-primary-foreground'>
-                                <Sparkles />
-                            </div>
+                            <Sparkles />
+                        </div>
                         <div className='flex flex-col'>
                             <h1 className='font-bold'>Lurna AI</h1>
                             <p className='text-muted-foreground text-xs'>
@@ -31,12 +31,12 @@ export default function SessionHeader(){
                             </Button>
                         </div>
                         <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png"/>
+                            <AvatarImage src="https://github.com/shadcn.png" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </div>
                 </div>
-            </Container>
-        </header>
+            </header>
+        </Container>
     </>
 }

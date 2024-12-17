@@ -1,4 +1,4 @@
-import { Text } from "lucide-react";
+import { Info } from "lucide-react";
 import React from "react";
 import SectionCard from "./SectionCard";
 import ReactMarkdown from 'react-markdown';
@@ -68,33 +68,41 @@ Closures allow functions to access variables from their **lexical scope** even a
 `;
 
 export default function SessionBody() {
-    return <>
-        <SectionCard
-            heading="The title of this session"
-            subHeading="The reason for this section"
-            Icon={Text}
-        >
-            <ReactMarkdown
-            components={{
+  return <>
+    <SectionCard
+      heading="The title of this session"
+      subHeading="The reason for this section"
+      Icon={Info}
+      rightComponent={
+        <>
+          <p>3/12</p>
+        </>
+      }
+      progress={70}
+    >
+      <div className="py-6 px-3">
+        <ReactMarkdown
+          components={{
+            // @ts-ignore
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '');
+              return !inline && match ? (
                 // @ts-ignore
-                code({ node, inline, className, children, ...props }) {
-                  const match = /language-(\w+)/.exec(className || '');
-                  return !inline && match ? (
-                    // @ts-ignore
-                    <SyntaxHighlighter style={materialLight} language={match[1]} {...props} className='rounded-xl border'>
-                      {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
-                  ) : (
-                    <code className={className} {...props}>
-                    {/* @ts-ignore */}
-                      {children}
-                    </code>
-                  );
-                },
-              }}
-            >
-                {markdown}
-            </ReactMarkdown>
-        </SectionCard>
-    </>
+                <SyntaxHighlighter style={materialLight} language={match[1]} {...props} className='rounded-xl border'>
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={className} {...props}>
+                  {/* @ts-ignore */}
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {markdown}
+        </ReactMarkdown>
+      </div>
+    </SectionCard>
+  </>
 }
