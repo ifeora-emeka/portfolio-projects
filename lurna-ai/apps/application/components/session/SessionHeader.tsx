@@ -6,9 +6,9 @@ import {ArrowLeft, ArrowRight, Sparkles} from "lucide-react";
 
 export default function SessionHeader(){
     return <>
-        <header className='bg-card border-b min-h-16 max-h-16 flex items-center'>
+        <header className='bg-card border-b min-h-14 max-h-14 flex items-center'>
             <Container>
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-between w-full'>
                     <div className='flex items-center gap-2'>
                         <div
                             className='h-9 w-9 rounded-full object-center bg-primary flex items-center justify-center text-primary-foreground'>
