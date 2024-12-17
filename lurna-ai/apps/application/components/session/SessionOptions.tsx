@@ -5,10 +5,10 @@ export default function SessionOptions() {
     return <>
         <div className={'flex flex-col gap-2'}>
             <div className={'flex flex-col gap-2'}>
-                <EachOption heading={'Option 1'} subHeading={'This is the correct answer'} index={0} />
-                <EachOption heading={'Option 2'} subHeading={'This is the correct answer'} index={1} mode={'correct'} />
-                <EachOption heading={'Option 3'} subHeading={'This is the correct answer'} index={2} mode={'wrong'} />
-                <EachOption heading={'Option 4'} subHeading={'This is the correct answer'} index={3} />
+                <EachOption heading={'Option 1'} subHeading={'This is the correct answer'} />
+                <EachOption heading={'Option 2'} subHeading={'This is the correct answer'} mode={'correct'} />
+                <EachOption heading={'Option 3'} subHeading={'This is the correct answer'} mode={'wrong'} />
+                <EachOption heading={'Option 4'} subHeading={'This is the correct answer'} />
             </div>
             <div className={'h-16 border-t items-center justify-end flex'}>
                 <Button>
@@ -20,7 +20,7 @@ export default function SessionOptions() {
 }
 
 
-const EachOption = ({ heading, subHeading, index, mode = 'default', isSelected }: { heading: string; subHeading: string; index: number; mode?: 'default' | 'wrong' | 'correct'; isSelected?: boolean; }) => {
+const EachOption = ({ heading, subHeading, mode = 'default', isSelected }: { heading: string; subHeading: string; mode?: 'default' | 'wrong' | 'correct'; isSelected?: boolean; }) => {
     return <>
         <button className={cn('flex gap-3 border-2 rounded-xl p-2 ', {
             "border-green-400  text-green-700": mode === 'correct',

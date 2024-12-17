@@ -75,7 +75,7 @@ export default function SessionBody() {
       Icon={Info}
       rightComponent={
         <>
-          <p>3/12</p>
+          <p className='text-muted-foreground'>3/12</p>
         </>
       }
       progress={70}
@@ -83,17 +83,14 @@ export default function SessionBody() {
       <div className="py-6 px-3">
         <ReactMarkdown
           components={{
-            // @ts-ignore
-            code({ node, inline, className, children, ...props }) {
+            code({ inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
-                // @ts-ignore
                 <SyntaxHighlighter style={materialLight} language={match[1]} {...props} className='rounded-xl border'>
                   {String(children).replace(/\n$/, '')}
                 </SyntaxHighlighter>
               ) : (
                 <code className={className} {...props}>
-                  {/* @ts-ignore */}
                   {children}
                 </code>
               );
