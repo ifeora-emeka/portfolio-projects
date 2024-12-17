@@ -37,19 +37,19 @@ const EachSection = ({ isActive, isDone }: {
         <div>
             <div
                 onClick={() => setShowSub(!showSub)}
-                className={cn('rounded-xl flex items-center gap-2 cursor-pointer', {
+                className={cn('rounded-xl flex items-center gap-2 cursor-pointer truncate', {
                     "text-muted-foreground opacity-80": !isActive && !isDone,
                     "line-through": isDone
                     // "font-": isActive || isDone,
                 })}
             >
-                <div className={cn(`h-4 w-4 rounded-full bg-background border`, {
+                <div className={cn(`h-4 min-w-4 rounded-full bg-background border`, {
                     "bg-green-400 border-green-400": isDone,
                     "bg-yellow-400 border-yellow-400": isActive,
                 })}>
 
                 </div>
-                <p>The name of the section</p>
+                <p className='truncate'>The name of the section</p>
             </div>
             {
                 showSub && <div className={cn('pt-2 pb-3 flex flex-col gap-1 border-l pl-4 ml-2', {

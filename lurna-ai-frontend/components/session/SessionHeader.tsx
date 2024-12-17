@@ -2,14 +2,15 @@ import Container from "@/components/Container";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { Moon, Settings, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function SessionHeader() {
     return <>
         <Container>
             <header className='bg-card border min-h-14 max-h-14 flex items-center px-3 rounded-xl'>
                 <div className='flex items-center justify-between w-full'>
-                    <div className='flex items-center gap-2'>
+                    <Link className='flex items-center gap-2' href='/'>
                         <div
                             className='h-9 w-9 rounded-full object-center bg-primary flex items-center justify-center text-primary-foreground'>
                             <Sparkles />
@@ -20,14 +21,14 @@ export default function SessionHeader() {
                                 AI driven learning experience
                             </p>
                         </div>
-                    </div>
+                    </Link>
                     <div className={'flex gap-4 items-center'}>
                         <div className={'flex overflow-y-hidden'}>
-                            <Button size={'icon'} variant={'outline'} className={'rounded-tr-none rounded-br-none'}>
-                                <ArrowLeft />
+                            <Button variant={'ghost'} size='icon'>
+                                <Moon />
                             </Button>
-                            <Button size={'icon'} variant={'outline'} className={'rounded-tl-none rounded-bl-none border-l-0'} disabled>
-                                <ArrowRight />
+                            <Button variant={'ghost'} size='icon'>
+                                <Settings />
                             </Button>
                         </div>
                         <Avatar>

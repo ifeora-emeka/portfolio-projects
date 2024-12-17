@@ -14,14 +14,14 @@ export default function QuizSession() {
             <SessionHeader />
             <div className='flex-1 py-2'>
                 <Container>
-                    <div className={'grid grid-cols-12 gap-2'}>
-                        <div className='col-span-3'>
+                    <div className={'flex gap-2'}>
+                        <div className='xl:w-[20%]'>
                             <SessionOutline />
                         </div>
-                        <div className={'col-span-6'}>
+                        <div className={'flex-1'}>
                             <SessionBody />
                         </div>
-                        <div className={'col-span-3'}>
+                        <div className={'xl:w-[30%]'}>
                             <SessionAnswer />
                         </div>
                     </div>
