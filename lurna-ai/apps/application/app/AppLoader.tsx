@@ -6,8 +6,8 @@ import React from 'react'
 export default function AppLoader({ children }: { children: any }) {
     return (
         <>
-            <div className='min-h-screen max-h-screen flex items-center justify-center'>
-                <div className='flex flex-col items-center'>
+            <div className='min-h-screen max-h-screen flex items-center justify-center bg-background'>
+                <div className='flex flex-col items-center h-[80vh] w-[80vh] rounded-full justify-center'>
                     <div className='h-16 w-16 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-6'>
                         <Sparkles className='h-7 w-7' />
                     </div>
