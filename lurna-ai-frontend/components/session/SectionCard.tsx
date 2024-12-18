@@ -11,7 +11,7 @@ type Props = {
     children: React.ReactNode;
     progress?: number;
     rightComponent?: React.ReactNode;
-    verient?: 'default' | 'ghost'
+    variant?: 'default' | 'ghost'
 }
 
 export default function SectionCard({
@@ -21,12 +21,12 @@ export default function SectionCard({
     subHeading,
     progress,
     rightComponent,
-    verient = 'default'
+    variant = 'default'
 }: Props) {
     return (
         <div className={'relative'}>
             <div className={cn("bg-card rounded-xl overflow-hidden border hover:shadow-sm h-[calc(100vh-3.5rem-1.5rem)]", {
-                "bg-inherit bg-none border-0": verient == 'ghost'
+                "bg-inherit bg-none border-0 shadow-none": variant == 'ghost'
             })}>
                 <header className='h-12 flex items-center justify-between top-0 sticky shadow-sm px-3 z-10'>
                     {

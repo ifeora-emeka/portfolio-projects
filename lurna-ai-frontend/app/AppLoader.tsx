@@ -1,19 +1,52 @@
 'use client'
+import AuthPage from '@/components/auth/AuthPage';
 import { APP_CONFIG } from '@/config/app.config'
+import { useAuthContext } from '@/context/auth.context';
 import { Sparkles } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { User } from 'firebase/auth';
+import { auth } from '@/config/firebase.config';
+import firebase from "firebase/compat/app";
 
 export default function AppLoader({ children }: { children: React.ReactNode }) {
-    const [ready, setReady] = useState(false);
+    const { authState: { user, isLoading }, setAuthState } = useAuthContext();
 
     useEffect(() => {
-        setReady(true);
-    }, []);
+        const unsubscribe = auth.onAuthStateChanged((firebaseUser: User | null) => {
+            if (firebaseUser) {
+                setAuthState({
+                    user: {
+                        ...firebaseUser,
+                        uid: firebaseUser.uid,
+                        email: firebaseUser.email,
+                        displayName: firebaseUser.displayName,
+                        photoURL: firebaseUser.photoURL
+                    } as firebase.User,
+                    isLoading: false
+                });
+            } else {
+                setAuthState({
+                    user: null,
+                    isLoading: false
+                });
+            }
+        }, (error) => {
+            // Handle any authentication errors
+            console.error('Authentication error:', error);
+            setAuthState({
+                user: null,
+                isLoading: false
+            });
+        });
+
+        // Cleanup subscription on unmount
+        return () => unsubscribe();
+    }, [setAuthState]);
 
     return (
         <>
             {
-                !ready ? <div className='min-h-screen max-h-screen flex items-center justify-center bg-background'>
+                isLoading && user === null && <div className='min-h-screen max-h-screen flex items-center justify-center bg-background'>
                     <div className='flex flex-col items-center h-[80vh] w-[80vh] rounded-full justify-center'>
                         <div className='h-16 w-16 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-6'>
                             <Sparkles className='h-7 w-7' />
@@ -30,11 +63,10 @@ export default function AppLoader({ children }: { children: React.ReactNode }) {
                             </span>
                         </div>
                     </div>
-                </div> :
-                    <>
-                        {children}
-                    </>
+                </div> 
             }
+            {!isLoading && user === null && <AuthPage />}
+            {!isLoading && user !== null && children}
         </>
     )
 }

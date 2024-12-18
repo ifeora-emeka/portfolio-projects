@@ -1,11 +1,14 @@
+'use client'
 import Container from "@/components/Container";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Settings, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { useAuthContext } from "@/context/auth.context";
 
 export default function SessionHeader() {
+    const { authState: { user } } = useAuthContext();
     return <>
         <Container>
             <header className='bg-card border min-h-14 max-h-14 flex items-center px-3 rounded-xl'>
@@ -31,10 +34,14 @@ export default function SessionHeader() {
                                 <Settings />
                             </Button>
                         </div>
-                        <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" />
-                            <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
+                        {
+                            user && <Avatar>
+                                {user.photoURL && <AvatarImage src={user.photoURL} />}
+                                <AvatarFallback>{user?.displayName ? 
+                                `${user?.displayName[0]} ${user?.displayName[1]}`
+                                 : 'YO'}</AvatarFallback>
+                            </Avatar>
+                        }
                     </div>
                 </div>
             </header>

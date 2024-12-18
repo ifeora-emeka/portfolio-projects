@@ -9,7 +9,7 @@ export default function DashboardLeftNav() {
     <>
         <SectionCard
             heading='Menu'
-            verient='ghost'
+            variant='ghost'
         >
             <div className='py-3'>
               <EachNavLink label='Learning tracks' route='/' Icon={GraduationCap} isActive />
