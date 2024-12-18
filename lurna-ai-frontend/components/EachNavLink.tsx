@@ -16,8 +16,8 @@ export default function EachNavLink({label, route, isActive, Icon}:Props) {
         <Link href={route} className={cn('flex gap-2 items-center p-2 rounded-xl hover:bg-primary/5', {
             "bg-primary/5 font-semibold": isActive
         })}>
-            <Icon />
-            <p>{label}</p>
+            <Icon className='h-5 w-5' />
+            <small>{label}</small>
         </Link>
     </>
   )
