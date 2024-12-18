@@ -25,8 +25,9 @@ export default function SectionCard({
 }: Props) {
     return (
         <div className={'relative'}>
-            <div className={cn("bg-card rounded-xl overflow-hidden border hover:shadow-sm h-[calc(100vh-3.5rem-1.5rem)]", {
-                "bg-inherit bg-none border-0 shadow-none": variant == 'ghost'
+            <div className={cn("bg-card rounded-xl overflow-hidden border h-[calc(100vh-3.5rem-1.5rem)]", {
+                "bg-inherit bg-none border-0 shadow-none": variant == 'ghost',
+                "hover:shadow-sm": variant === 'default'
             })}>
                 <header className='h-12 flex items-center justify-between top-0 sticky shadow-sm px-3 z-10'>
                     {

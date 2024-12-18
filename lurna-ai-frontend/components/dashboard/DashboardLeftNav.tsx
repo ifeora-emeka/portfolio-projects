@@ -11,7 +11,7 @@ export default function DashboardLeftNav() {
             heading='Menu'
             variant='ghost'
         >
-            <div className='py-3'>
+            <div className='py-3 space-y-2'>
               <EachNavLink label='Learning tracks' route='/' Icon={GraduationCap} isActive />
               <EachNavLink label='Wallet' route='/wallet' Icon={Wallet} />
               <EachNavLink label='Usage and billing' route='/billing' Icon={DollarSign} />

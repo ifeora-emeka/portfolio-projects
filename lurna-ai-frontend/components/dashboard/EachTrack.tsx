@@ -12,9 +12,9 @@ export default function EachTrack() {
                 </div>
                 <div className='p-3'>
                     <h4 className='font-semibold'>The name of the track</h4>
-                    <p className='text-muted-foreground mb-3'>Show description of the track</p>
+                    <p className='text-muted-foreground mb-3 text-xs'>Show description of the track</p>
                     <div className='h-2 w-full rounded-full overflow-hidden bg-accent'>
-                        <div className='h-2 w-[40%] bg-primary' />
+                        <div className='h-2 w-[40%] bg-primary rounded-full' />
                     </div>
                 </div>
             </div>
