@@ -14,7 +14,7 @@ export default function AuthPage() {
   const [password, setPassword] = useState('')
 
   const handleEmailAuth = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log('Email auth:', email, password)
   }
 
@@ -22,11 +22,9 @@ export default function AuthPage() {
     const provider = new GoogleAuthProvider()
     signInWithPopup(auth, provider)
       .then((result) => {
-        // Handle successful login
         console.log('Google auth successful:', result.user)
       })
       .catch((error) => {
-        // Handle errors
         console.error('Google auth error:', error)
       })
   }
@@ -35,11 +33,9 @@ export default function AuthPage() {
     const provider = new FacebookAuthProvider()
     signInWithPopup(auth, provider)
       .then((result) => {
-        // Handle successful login
         console.log('Facebook auth successful:', result.user)
       })
       .catch((error) => {
-        // Handle errors
         console.error('Facebook auth error:', error)
       })
   }
@@ -99,7 +95,7 @@ export default function AuthPage() {
         </CardContent>
         <CardFooter>
           <p className="text-xs text-center text-gray-600">
-            By signing up, you're accepting the terms of use
+            {`By signing up, you're accepting the terms of use`}
           </p>
         </CardFooter>
       </Card>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Moon, Settings, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useAuthContext } from "@/context/auth.context";
+import { APP_CONFIG } from "@/config/app.config";
 
 export default function SessionHeader() {
     const { authState: { user } } = useAuthContext();
@@ -19,9 +20,11 @@ export default function SessionHeader() {
                             <Sparkles />
                         </div>
                         <div className='flex flex-col'>
-                            <h1 className='font-bold'>Lurna AI</h1>
+                            <h1 className='font-bold'>
+                                {APP_CONFIG.name}
+                            </h1>
                             <p className='text-muted-foreground text-xs'>
-                                AI driven learning experience
+                                {APP_CONFIG.description}
                             </p>
                         </div>
                     </Link>
@@ -37,9 +40,9 @@ export default function SessionHeader() {
                         {
                             user && <Avatar>
                                 {user.photoURL && <AvatarImage src={user.photoURL} />}
-                                <AvatarFallback>{user?.displayName ? 
-                                `${user?.displayName[0]} ${user?.displayName[1]}`
-                                 : 'YO'}</AvatarFallback>
+                                <AvatarFallback>{user?.displayName ?
+                                    `${user?.displayName[0]} ${user?.displayName[1]}`
+                                    : 'YO'}</AvatarFallback>
                             </Avatar>
                         }
                     </div>
