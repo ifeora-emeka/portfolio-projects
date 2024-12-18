@@ -12,7 +12,7 @@ export default function DashboardBody() {
         <SectionCard
             heading='Your learning tracks'
             subHeading='Continue from where you left off or create a new track'
-            verient='ghost'
+            variant='ghost'
             Icon={LayoutGrid}
             rightComponent={
                 <Button size='sm'>Create track</Button>
